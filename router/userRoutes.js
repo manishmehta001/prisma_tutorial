@@ -3,14 +3,11 @@ const userController = require('./../controller/userController');
 const authController = require('./../controller/authController');
 const verifyJWT = require('./../middleware/verifyJwt');
 const router = Router();
-router
-  .route('/')
-  .get(userController.getAllUser)
-  .post(userController.createUser);
+router.route('/').get(userController.getAllUser);
 router
   .route('/:id')
   .get(userController.getPostByUser)
   .patch(userController.updateUser)
-  .delete(userController.deleteUser);
+  .delete(authController.restrictTo('ADMIN'), userController.deleteUser);
 
 module.exports = router;

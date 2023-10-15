@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 
 app.use('/api/v1/post', postRouter);
 app.use('/api/v1/comment', commentRouter);
-app.use('/api/v1/login', authRouter);
+app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/refresh', refreshTokenRouter);
 app.use('/api/v1/logout', logoutRouter);
 // app.use(verifyJWT);
