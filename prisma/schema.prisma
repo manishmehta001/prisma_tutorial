@@ -19,6 +19,7 @@ model User {
   resetToken           String?
   passwordResetExpires DateTime?
   role                 Role      @default(USER)
+  isVerifiedEmail      Boolean   @default(false)
   created_at           DateTime  @default(now())
   updatedAt            DateTime  @updatedAt
   post                 Post[]
